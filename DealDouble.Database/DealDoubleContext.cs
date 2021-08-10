@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DealDouble.Database
 {
-    class DealDoubleContext : DbContext
+    public class DealDoubleContext : DbContext
     {
         public DealDoubleContext() : base("name=DealDoubleConnectionString")
         {
