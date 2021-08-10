@@ -15,7 +15,7 @@ namespace DealDouble.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Your About application description page.";
 
             return View();
         }
