@@ -1,0 +1,47 @@
+﻿
+<h2>Create Auction</h2>
+
+<form id="createForm" method="post" action="/Auction/Create">
+    <label>
+        Title
+    </label>
+    <input name="Title" />
+    <br />
+    <label>
+        Description
+    </label>
+    <input name="Description" />
+    <br />
+    <label>
+        ActualAmount
+    </label>
+    <input name="ActualAmount" />
+    <br />
+    <label>
+        StartingTime
+    </label>
+    <input name="StartingTime" />
+    <br />
+    <label>
+        EndingTime
+    </label>
+    <input name="EndingTime" />
+    <br />
+    <button type="button" id="saveButton">Save</button>
+
+
+</form>
+
+<script>
+    $("#saveButton").click(function () {
+        $.ajax({
+            url: "/Auction/Create",
+            method: "post",
+            data: $("#createForm").serialize()
+        }).done(function (response) {
+            debugger;
+
+            $("#listingArea").html(response);
+        }).fail(function () { });
+    });
+</script>
