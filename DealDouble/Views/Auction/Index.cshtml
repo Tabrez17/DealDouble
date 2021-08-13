@@ -1,11 +1,15 @@
 ﻿
 @model List<DealDouble.Entity.Auction>
 
-<div id="listingArea">
-    <table>
+<div id="listingArea" class="col-md-9">
+
+    <div>
+        <button id="createButton" class="btn btn-success">Add Auction</button>
+    </div>
+    <br />
+    <table class="table table-bordered table-striped">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>ActualAmount</th>
@@ -18,23 +22,22 @@
             @foreach (var auction in Model)
             {
                 <tr>
-                    <td>@auction.ID</td>
                     <td>@auction.Title</td>
                     <td>@auction.Description</td>
                     <td>@auction.ActualAmount</td>
                     <td>@auction.StartingTime</td>
                     <td>@auction.EndingTime</td>
                     <td>
-                        <button class="editButton" data-id="@auction.ID">Edit</button>
-                        <button class="deleteButton" data-id="@auction.ID">Delete</button>
+                        <button class="editButton btn btn-primary" data-id="@auction.ID">Edit</button>
+                        <button class="deleteButton btn btn-danger" data-id="@auction.ID">Delete</button>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <div>
-        <button id="createButton">Create New Auction</button>
-    </div>
+
+
+
 
     <div id="contentArea">
 
@@ -89,7 +92,7 @@
                     $("#listingArea").html(response);
                 });
             }
-           
+
         });
     </script>
 

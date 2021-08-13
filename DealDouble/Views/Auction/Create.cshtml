@@ -2,35 +2,31 @@
 <h2>Create Auction</h2>
 
 <form id="createForm" method="post" action="/Auction/Create">
-    <label>
-        Title
-    </label>
-    <input name="Title" />
-    <br />
-    <label>
-        Description
-    </label>
-    <input name="Description" />
-    <br />
-    <label>
-        ActualAmount
-    </label>
-    <input name="ActualAmount" />
-    <br />
-    <label>
-        StartingTime
-    </label>
-    <input name="StartingTime" />
-    <br />
-    <label>
-        EndingTime
-    </label>
-    <input name="EndingTime" />
-    <br />
-    <button type="button" id="saveButton">Save</button>
-
-
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" name="Title">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" name="Description">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Actual Amount</label>
+        <input type="text" class="form-control" name="ActualAmount">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Starting Time</label>
+        <input type="text" class="form-control" name="StartingTime">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ending Time</label>
+        <input type="text" class="form-control" name="EndingTime">
+    </div>
+    <button type="button" class="btn btn-primary" id="saveButton">Save</button>
 </form>
+
+
+
 
 <script>
     $("#saveButton").click(function () {
