@@ -1,29 +1,44 @@
 ﻿
-<h2>Create Auction</h2>
+
+<!-- Modal Header -->
+<div class="modal-header">
+    <h4 class="modal-title">Create Auction</h4>
+    <button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
 
 <form id="createForm" method="post" action="/Auction/Create">
-    <div class="mb-3">
-        <label class="form-label">Title</label>
-        <input type="text" class="form-control" name="Title">
+    <!-- Modal body -->
+    <div class="modal-body">
+        <div>
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" name="Title">
+        </div>
+        <div>
+            <label class="form-label">Description</label>
+            <input type="text" class="form-control" name="Description">
+        </div>
+        <div>
+            <label class="form-label">Actual Amount</label>
+            <input type="text" class="form-control" name="ActualAmount">
+        </div>
+        <div>
+            <label class="form-label">Starting Time</label>
+            <input type="text" class="form-control" name="StartingTime">
+        </div>
+        <div>
+            <label class="form-label">Ending Time</label>
+            <input type="text" class="form-control" name="EndingTime">
+        </div>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Description</label>
-        <input type="text" class="form-control" name="Description">
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveButton">Save</button>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Actual Amount</label>
-        <input type="text" class="form-control" name="ActualAmount">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Starting Time</label>
-        <input type="text" class="form-control" name="StartingTime">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Ending Time</label>
-        <input type="text" class="form-control" name="EndingTime">
-    </div>
-    <button type="button" class="btn btn-primary" id="saveButton">Save</button>
 </form>
+
+
 
 
 
@@ -35,9 +50,9 @@
             method: "post",
             data: $("#createForm").serialize()
         }).done(function (response) {
-            debugger;
-
+            
             $("#listingArea").html(response);
+            $("#formModal").model('toggle');
         }).fail(function () { });
     });
 </script>
