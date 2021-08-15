@@ -1,7 +1,7 @@
 ﻿
-@model List<DealDouble.Entity.Auction>
+@model DealDouble.ViewModels.AuctionListingViewModel
 
-<div id="listingArea" class="col-md-9">
+<div id="listingArea" class="col-md-12">
 
     <div>
         <button id="createButton" class="btn btn-success">Add Auction</button>
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var auction in Model)
+            @foreach (var auction in Model.Auction)
             {
                 <tr>
                     <td>@auction.Title</td>

@@ -14,6 +14,12 @@ namespace DealDouble
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "AuctionDetail",
+                url: "auction-detail/{id}",
+                defaults: new { controller = "Auction", action = "Detail" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

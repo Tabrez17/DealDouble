@@ -45,6 +45,15 @@ namespace DealDouble.Services
             }
 
         }
+
+        public List<Auction> GetPromotedAuction()
+        {
+            using (DealDoubleContext db = new DealDoubleContext())
+            {
+                return db.Auctions.Take(4).ToList();
+            }
+
+        }
         public Auction GetAuctionById(int ID)
         {
             using (DealDoubleContext db = new DealDoubleContext())
